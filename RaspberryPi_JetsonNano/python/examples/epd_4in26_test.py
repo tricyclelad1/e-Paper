@@ -53,7 +53,7 @@ try:
 
     logging.info("read bmp file on window")
     Himage2 = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
-    bmp = Image.open(os.path.join(picdir, 'Ghosts.bmp'))
+    bmp = Image.open(os.path.join(picdir, '100x100.bmp'))
     Himage2.paste(bmp, (50,10))
     epd.display_Fast(epd.getbuffer(Himage2))
     time.sleep(2)
