@@ -69,7 +69,7 @@ try:
     epd.init()
     Himage = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
     draw = ImageDraw.Draw(Himage)
-    turtles = Image.open(os.path.join(picdir, 'Turtles.bmp'))
+    turtles = Image.open(os.path.join(picdir, 'Turtles.jpg'))
 
     Himage.paste(turtles, (0,0))
 
