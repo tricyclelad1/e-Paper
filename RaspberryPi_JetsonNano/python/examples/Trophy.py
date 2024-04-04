@@ -43,7 +43,7 @@ try:
     #draw.rectangle((0,0,800,480), fill=0)
     #draw.rectangle((100,0,400,35), fill=255)
     #draw.rectangle((0,400,700,435), fill=255)
-    draw.text((400, 195), 'EVEN' , font = font35, fill = 0, anchor="mm")
+    draw.text((400, 195), 'Jennifer Lee Martinez' , font = font35, fill = 0, anchor="mm") #400x195 is center of winner box
     #draw.text((0, 400), 'PAX MAGNIFICA BELLUM GLORIOSUM', font = font35, fill = 0)
     epd.display(epd.getbuffer(Himage))
 
