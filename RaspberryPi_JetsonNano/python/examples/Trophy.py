@@ -30,7 +30,7 @@ try:
 
     font24 = ImageFont.truetype(os.path.join(picdir, 'TIFont.otf'), 24)
     font18 = ImageFont.truetype(os.path.join(picdir, 'TIFont.otf'), 18)
-    font35 = ImageFont.truetype(os.path.join(picdir, 'FTIFont.ot'), 35)
+    font35 = ImageFont.truetype(os.path.join(picdir, 'TIFont.otf'), 35)
 
     # Drawing on the Vertical image
     logging.info("Drawing on the Vertical image...")
