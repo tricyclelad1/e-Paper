@@ -17,8 +17,8 @@ logging.basicConfig(level=logging.DEBUG)
 
 try:
     logging.info("Trophy")
-    epd = epd4in26.EPD()
-    
+    epd = epd4in26.EPD() 
+
     logging.info("init and Clear")
     epd.init()
     epd.Clear()
@@ -27,17 +27,20 @@ try:
     font18 = ImageFont.truetype(os.path.join(picdir, 'TIFont.otf'), 18)
     font35 = ImageFont.truetype(os.path.join(picdir, 'TIFont.otf'), 35)
 
+    #Drawing on the Horizontal Image
     logging.info("Drawing on the Horizontal image...")
     Himage = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
     draw = ImageDraw.Draw(Himage)
     draw.text((2, 0), 'hello world', font = font18, fill = 0)
+    epd.display(epd.getbuffer(Himage))
 
-   # time.sleep(2)
+    time.sleep(2)
 
-   # turtles = Image.open(os.path.join(picdir, 'Turtles.jpg'))
+    #turtles = Image.open(os.path.join(picdir, 'Turtles.jpg'))
     #Himage.paste(turtles, (0,0))
-#
-#    time.sleep(2)
+    #epd.display_Fast(epd.getbuffer(Himage))
+    #time.sleep(2)
+
  #   draw = ImageDraw.Draw(Himage)
   #  draw.text((100, 0), 'Twilight Imperium', font = font35, fill = 0)
    # draw.text((0, 400), 'PAX MAGNIFICA BELLUM GLORIOSUM', font = font35, fill = 0)
