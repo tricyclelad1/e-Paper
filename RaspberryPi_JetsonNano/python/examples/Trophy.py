@@ -34,7 +34,7 @@ try:
 
     # Drawing on the Vertical image
     logging.info("Drawing on the Vertical image...")
-    Limage = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
+    Limage = Image.new('HACAN', (epd.height, epd.width), 255)  # 255: clear the frame
     draw = ImageDraw.Draw(Limage)
     draw.text((2, 0), 'hello world', font = font18, fill = 0)
     draw.text((2, 20), '4.26inch e-Paper', font = font18, fill = 0)
