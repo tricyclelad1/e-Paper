@@ -27,7 +27,7 @@ try:
     font18 = ImageFont.truetype(os.path.join(picdir, 'TIFont.otf'), 18)
     font35 = ImageFont.truetype(os.path.join(picdir, 'TIFont.otf'), 35)
 
-    winnerAnchor = anchor(xy=(400,195), anchor-"mm") 
+    winnerAnchor = anchor(xy=(400,195), anchor="mm") 
 
     #Drawing on the Horizontal Image
     logging.info("Drawing on the Horizontal image...")
