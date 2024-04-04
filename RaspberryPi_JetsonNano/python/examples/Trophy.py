@@ -70,51 +70,11 @@ try:
     Himage = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
     draw = ImageDraw.Draw(Himage)
     turtles = Image.open(os.path.join(picdir, 'Turtles.jpg'))
-
     Himage.paste(turtles, (0,0))
+    draw.text((100, 0), 'Twilight Imperium', font = font35, fill = 0)
+    draw.text((0, 400), 'PAX MAGNIFICA BELLUM GLORIOSUM', font = font35, fill = 0)
 
-    # partial update
-    logging.info("5.show time")
-    # epd.init()
-    # epd.Clear()
-    # Himage = Image.new('1', (epd.width, epd.height), 255)
-    # draw = ImageDraw.Draw(Himage)
-    num = 0
-    while (True):
-        draw.rectangle((10, 120, 130, 170), fill = 255)
-        draw.text((10, 120), time.strftime('%H:%M:%S'), font = font24, fill = 0)
-        epd.display_Partial(epd.getbuffer(Himage))
-        num = num + 1
-        if(num == 10):
-            break
-
-    '''4Gray display'''
-    logging.info("4Gray display--------------------------------")
-    epd.init_4GRAY()
-    
-    Limage = Image.new('L', (epd.width, epd.height), 0)  # 255: clear the frame
-    draw = ImageDraw.Draw(Limage)
-    draw.text((20, 0), u'微雪电子', font = font35, fill = epd.GRAY1)
-    draw.text((20, 35), u'微雪电子', font = font35, fill = epd.GRAY2)
-    draw.text((20, 70), u'微雪电子', font = font35, fill = epd.GRAY3)
-    draw.text((40, 110), 'hello world', font = font18, fill = epd.GRAY1)
-    draw.line((10, 140, 60, 190), fill = epd.GRAY1)
-    draw.line((60, 140, 10, 190), fill = epd.GRAY1)
-    draw.rectangle((10, 140, 60, 190), outline = epd.GRAY1)
-    draw.line((95, 140, 95, 190), fill = epd.GRAY1)
-    draw.line((70, 165, 120, 165), fill = epd.GRAY1)
-    draw.arc((70, 140, 120, 190), 0, 360, fill = epd.GRAY1)
-    draw.rectangle((10, 200, 60, 250), fill = epd.GRAY1)
-    draw.chord((70, 200, 120, 250), 0, 360, fill = epd.GRAY1)
-    epd.display_4Gray(epd.getbuffer_4Gray(Limage))
     time.sleep(2)
-    
-    #display 4Gra bmp
-    Himage = Image.open(os.path.join(picdir, 'HacanBW.bmp'))
-    epd.display_4Gray(epd.getbuffer_4Gray(Himage))
-    time.sleep(2)
-    
-
     logging.info("Clear...")
     epd.init()
     epd.Clear()
