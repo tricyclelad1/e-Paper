@@ -30,11 +30,11 @@ try:
 
     font24 = ImageFont.truetype(os.path.join(picdir, 'TIFont.otf'), 24)
     font18 = ImageFont.truetype(os.path.join(picdir, 'TIFont.otf'), 18)
-    font35 = ImageFont.truetype(os.path.join(picdir, 'TIFont.otf'), 35)
+    font35 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 35)
 
     # Drawing on the Vertical image
     logging.info("Drawing on the Vertical image...")
-    Limage = Image.new('HACAN', (epd.height, epd.width), 255)  # 255: clear the frame
+    Limage = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
     draw = ImageDraw.Draw(Limage)
     draw.text((2, 0), 'hello world', font = font18, fill = 0)
     draw.text((2, 20), '4.26inch e-Paper', font = font18, fill = 0)
@@ -52,7 +52,7 @@ try:
 
     logging.info("read bmp file")
     epd.init_Fast()
-    Himage = Image.open(os.path.join(picdir, '7in5_V2.bmp'))
+    Himage = Image.open(os.path.join(picdir, 'Hacan.bmp'))
     epd.display_Fast(epd.getbuffer(Himage))
     time.sleep(2)
 
