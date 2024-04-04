@@ -72,8 +72,10 @@ try:
     Himage.paste(turtles, (0,0))
 
     time.sleep(2)
-    Himage.text((100, 0), 'Twilight Imperium', font = font35, fill = 0)
-    Himage.text((0, 400), 'PAX MAGNIFICA BELLUM GLORIOSUM', font = font35, fill = 0)
+    draw = ImageDraw.Draw(Himage)
+
+    draw.text((100, 0), 'Twilight Imperium', font = font35, fill = 0)
+    draw.text((0, 400), 'PAX MAGNIFICA BELLUM GLORIOSUM', font = font35, fill = 0)
 
     time.sleep(2)
     logging.info("Clear...")
