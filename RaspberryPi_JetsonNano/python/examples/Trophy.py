@@ -37,9 +37,8 @@ try:
     epd.display_Fast(epd.getbuffer(Himage))
     time.sleep(2)
 
- #   draw = ImageDraw.Draw(Himage)
-  #  draw.text((100, 0), 'Twilight Imperium', font = font35, fill = 0)
-   # draw.text((0, 400), 'PAX MAGNIFICA BELLUM GLORIOSUM', font = font35, fill = 0)
+    draw.text((100, 0), 'Twilight Imperium', font = font35, fill = 0)
+    draw.text((0, 400), 'PAX MAGNIFICA BELLUM GLORIOSUM', font = font35, fill = 0)
 #
 #    time.sleep(2)
     logging.info("Clear...")
