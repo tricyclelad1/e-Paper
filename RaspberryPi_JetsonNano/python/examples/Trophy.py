@@ -52,7 +52,7 @@ try:
 
     logging.info("read bmp file")
     epd.init_Fast()
-    Himage = Image.open(os.path.join(picdir, '7in5_V2.bmp'))
+    Himage = Image.open(os.path.join(picdir, 'Hacan.bmp'))
     epd.display_Fast(epd.getbuffer(Himage))
     epd.display_Fast(epd.getbuffer(Himage))
     time.sleep(2)
