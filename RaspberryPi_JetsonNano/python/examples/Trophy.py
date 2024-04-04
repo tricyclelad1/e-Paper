@@ -120,7 +120,7 @@ try:
     time.sleep(2)
     
     #display 4Gra bmp
-    Himage = Image.open(os.path.join(picdir, 'HACAN.bmp'))
+    Himage = Image.open(os.path.join(picdir, 'HacanBW.bmp'))
     epd.display_4Gray(epd.getbuffer_4Gray(Himage))
     time.sleep(2)
     
