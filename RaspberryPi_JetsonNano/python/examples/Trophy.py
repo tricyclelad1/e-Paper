@@ -15,6 +15,7 @@ import traceback
 
 logging.basicConfig(level=logging.DEBUG)
 
+def winnerAnchor(xy=(400,195), anchor="mm")
 try:
     logging.info("Trophy")
     epd = epd4in26.EPD() 
@@ -26,8 +27,7 @@ try:
     font24 = ImageFont.truetype(os.path.join(picdir, 'TIFont.otf'), 24)
     font18 = ImageFont.truetype(os.path.join(picdir, 'TIFont.otf'), 18)
     font35 = ImageFont.truetype(os.path.join(picdir, 'TIFont.otf'), 35)
-
-    winnerAnchor = anchor(xy=(400,195), anchor="mm") 
+ 
 
     #Drawing on the Horizontal Image
     logging.info("Drawing on the Horizontal image...")
@@ -44,7 +44,7 @@ try:
     #draw.rectangle((0,0,800,480), fill=0)
     #draw.rectangle((100,0,400,35), fill=255)
     #draw.rectangle((0,400,700,435), fill=255)
-    draw.text((400, 195), 'Camron Martinez', font = font35, fill = 0)
+    draw.text((400, 195), 'Camron Martinez', font = font35, fill = 0, anchor=winnerAnchor)
     #draw.text((0, 400), 'PAX MAGNIFICA BELLUM GLORIOSUM', font = font35, fill = 0)
     epd.display(epd.getbuffer(Himage))
 
