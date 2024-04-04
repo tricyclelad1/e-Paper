@@ -30,17 +30,18 @@ try:
     #Drawing on the Horizontal Image
     logging.info("Drawing on the Horizontal image...")
     Himage = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
-    draw = ImageDraw.Draw(Himage)
 
     turtles = Image.open(os.path.join(picdir, 'Turtles.jpg'))
     Himage.paste(turtles, (0,0))
     epd.display_Fast(epd.getbuffer(Himage))
     time.sleep(2)
 
+    draw = ImageDraw.Draw(Himage)
     draw.text((100, 0), 'Twilight Imperium', font = font35, fill = 0)
     draw.text((0, 400), 'PAX MAGNIFICA BELLUM GLORIOSUM', font = font35, fill = 0)
-#
-#    time.sleep(2)
+    epd.display(epd.getbuffer(Himage))
+
+    time.sleep(2)
     logging.info("Clear...")
     epd.init()
     epd.Clear()
