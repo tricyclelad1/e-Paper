@@ -32,42 +32,13 @@ try:
     font18 = ImageFont.truetype(os.path.join(picdir, 'TIFont.otf'), 18)
     font35 = ImageFont.truetype(os.path.join(picdir, 'TIFont.otf'), 35)
 
-    # Drawing on the Vertical image
-    #logging.info("Drawing on the Vertical image...")
-    #Limage = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
-    #draw = ImageDraw.Draw(Limage)
-    #draw.text((2, 0), 'hello world', font = font18, fill = 0)
-    #draw.text((2, 20), '4.26inch e-Paper', font = font18, fill = 0)
-    #draw.text((20, 50), u'微雪电子', font = font18, fill = 0)
-    #draw.line((10, 90, 60, 140), fill = 0)
-    #draw.line((60, 90, 10, 140), fill = 0)
-    #draw.rectangle((10, 90, 60, 140), outline = 0)
-    #draw.line((95, 90, 95, 140), fill = 0)
-    #draw.line((70, 115, 120, 115), fill = 0)
-    #draw.arc((70, 90, 120, 140), 0, 360, fill = 0)
-    #draw.rectangle((10, 150, 60, 200), fill = 0)
-    #draw.chord((70, 150, 120, 200), 0, 360, fill = 0)
-    #epd.display(epd.getbuffer(Limage))
-    #time.sleep(2)
-
-    #logging.info("read bmp file")
-    #epd.init_Fast()
-    #Himage = Image.open(os.path.join(picdir, 'HACAN.bmp'))
-    #epd.display_Fast(epd.getbuffer(Himage))
-    #epd.display_Fast(epd.getbuffer(Himage))
-    #time.sleep(2)
-
-    #logging.info("read bmp file on window")
-    #Himage2 = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
-    #bmp = Image.open(os.path.join(picdir, 'Ghosts.bmp'))
-    #Himage2.paste(bmp, (50,10))
-    #epd.display_Fast(epd.getbuffer(Himage2))
-    #time.sleep(2)
-
-    # Drawing on the Horizontal image
     logging.info("Drawing on the Horizontal image...")
-    epd.init()
+    Limage = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
     Himage = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
+    draw = ImageDraw.Draw(Limage)
+    draw.text((2, 0), 'hello world', font = font18, fill = 0)
+    time.sleep(2)
+    
     turtles = Image.open(os.path.join(picdir, 'Turtles.jpg'))
     Himage.paste(turtles, (0,0))
 
