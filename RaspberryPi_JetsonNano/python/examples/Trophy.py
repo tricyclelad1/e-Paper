@@ -30,7 +30,7 @@ try:
 
     font24 = ImageFont.truetype(os.path.join(picdir, 'TIFont.otf'), 24)
     font18 = ImageFont.truetype(os.path.join(picdir, 'TIFont.otf'), 18)
-    font35 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 35)
+    font35 = ImageFont.truetype(os.path.join(picdir, 'FTIFont.ot'), 35)
 
     # Drawing on the Vertical image
     logging.info("Drawing on the Vertical image...")
@@ -52,7 +52,7 @@ try:
 
     logging.info("read bmp file")
     epd.init_Fast()
-    Himage = Image.open(os.path.join(picdir, 'Hacan.bmp'))
+    Himage = Image.open(os.path.join(picdir, 'in5_V2.bmp'))
     epd.display_Fast(epd.getbuffer(Himage))
     time.sleep(2)
 
@@ -119,7 +119,7 @@ try:
     time.sleep(2)
     
     #display 4Gra bmp
-    Himage = Image.open(os.path.join(picdir, '4in26_Scale.bmp'))
+    Himage = Image.open(os.path.join(picdir, 'HACAN.bmp'))
     epd.display_4Gray(epd.getbuffer_4Gray(Himage))
     time.sleep(2)
     
