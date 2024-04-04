@@ -37,10 +37,11 @@ try:
     #time.sleep(2)
 
     draw = ImageDraw.Draw(Himage)
-    draw.rectangle((100,0,135,170), fill=255)
+    draw.rectangle((0,0,800,480), fill=0)
+    draw.rectangle((100,0,200,35), fill=255)
     draw.rectangle((0,400,300,170), fill=255)
-    draw.text((100, 0), 'Twilight Imperium', font = font35, fill = 0)
-    draw.text((0, 400), 'PAX MAGNIFICA BELLUM GLORIOSUM', font = font35, fill = 0)
+    draw.text((100, 0), 'Twilight Imperium', font = font35, fill = 255)
+    draw.text((0, 400), 'PAX MAGNIFICA BELLUM GLORIOSUM', font = font35, fill = 255)
     epd.display(epd.getbuffer(Himage))
 
     #time.sleep(2)
