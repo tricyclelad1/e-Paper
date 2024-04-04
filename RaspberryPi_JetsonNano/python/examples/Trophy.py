@@ -23,31 +23,26 @@ try:
     epd.init()
     epd.Clear()
 
-    #font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
-    #font18 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 18)
-    #font35 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 35)
-
-
     font24 = ImageFont.truetype(os.path.join(picdir, 'TIFont.otf'), 24)
     font18 = ImageFont.truetype(os.path.join(picdir, 'TIFont.otf'), 18)
     font35 = ImageFont.truetype(os.path.join(picdir, 'TIFont.otf'), 35)
 
     logging.info("Drawing on the Horizontal image...")
-    Limage = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
     Himage = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
-    draw = ImageDraw.Draw(Limage)
-    draw.text((2, 0), 'hello world', font = font18, fill = 0)
-    time.sleep(2)
-    
-    turtles = Image.open(os.path.join(picdir, 'Turtles.jpg'))
-    Himage.paste(turtles, (0,0))
-
-    time.sleep(2)
     draw = ImageDraw.Draw(Himage)
-    draw.text((100, 0), 'Twilight Imperium', font = font35, fill = 0)
-    draw.text((0, 400), 'PAX MAGNIFICA BELLUM GLORIOSUM', font = font35, fill = 0)
+    draw.text((2, 0), 'hello world', font = font18, fill = 0)
 
-    time.sleep(2)
+   # time.sleep(2)
+
+   # turtles = Image.open(os.path.join(picdir, 'Turtles.jpg'))
+    #Himage.paste(turtles, (0,0))
+#
+#    time.sleep(2)
+ #   draw = ImageDraw.Draw(Himage)
+  #  draw.text((100, 0), 'Twilight Imperium', font = font35, fill = 0)
+   # draw.text((0, 400), 'PAX MAGNIFICA BELLUM GLORIOSUM', font = font35, fill = 0)
+#
+#    time.sleep(2)
     logging.info("Clear...")
     epd.init()
     epd.Clear()
