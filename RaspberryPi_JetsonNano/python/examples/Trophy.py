@@ -31,10 +31,10 @@ try:
     logging.info("Drawing on the Horizontal image...")
     Himage = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
 
-    turtles = Image.open(os.path.join(picdir, 'Turtles.jpg'))
-    Himage.paste(turtles, (0,0))
-    epd.display_Fast(epd.getbuffer(Himage))
-    time.sleep(2)
+    #turtles = Image.open(os.path.join(picdir, 'Turtles.jpg'))
+    #Himage.paste(turtles, (0,0))
+    #epd.display_Fast(epd.getbuffer(Himage))
+    #time.sleep(2)
 
     draw = ImageDraw.Draw(Himage)
     draw.rectangle((100,0,135,170), fill=255)
