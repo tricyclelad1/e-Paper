@@ -34,7 +34,7 @@ try:
 
     background = Image.open(os.path.join(picdir, 'Background wireframe.jpg'))
     portrait = Image.open(os.path.join(picdir, 'Axis 225 x 300.jpg'))
-    symbol = Image.open(os.path.join(picdir, 'Axis bg.jpg'))
+    symbol = Image.open(os.path.join(picdir, 'Axis bg.png'))
     #symbol = Image.open(os.path.join(picdir, 'Axis Symbol 212 x 212.jpg'))
 
 
