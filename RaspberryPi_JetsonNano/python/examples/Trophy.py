@@ -36,7 +36,7 @@ try:
     portrait = Image.open(os.path.join(picdir, 'Axis 225 x 300.jpg'))
 
     Himage.paste(background, (0,0))
-    Himage.paste(portrait, (15,169))
+    Himage.paste(portrait, (15,168))
     epd.display_Fast(epd.getbuffer(Himage))
     #time.sleep(2)
 
