@@ -34,7 +34,8 @@ try:
 
     background = Image.open(os.path.join(picdir, 'Background wireframe.jpg'))
     portrait = Image.open(os.path.join(picdir, 'Axis 225 x 300.jpg'))
-    symbol = Image.open(os.path.join(picdir, 'Axis Symbol 212 x 212.jpg'))
+    #symbol = Image.open(os.path.join(picdir, 'Axis Symbol 212 x 212.jpg'))
+    symbol = Image.open(os.path.join(picdir, 'Bent gb.jpg'))
 
 
     Himage.paste(background, (0,0))
