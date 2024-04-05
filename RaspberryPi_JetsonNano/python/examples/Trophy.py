@@ -32,13 +32,11 @@ try:
     logging.info("Drawing on the Horizontal image...")
     Himage = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
 
-    #background = Image.open(os.path.join(picdir, 'Background Test.jpg'))
-    #background = Image.open(os.path.join(picdir, 'Background Test Blocking.jpg'))
-    #background = Image.open(os.path.join(picdir, 'Turtles.jpg'))
-    #background = Image.open(os.path.join(picdir, 'portrait background.jpg'))
-    background = Image.open(os.path.join(picdir, 'Centered no lines.jpg'))
+    background = Image.open(os.path.join(picdir, 'Background wireframe.jpg'))
+    portrait = Image.open(os.path.join(picdir, 'Axis 225 x 300.jpg'))
 
     Himage.paste(background, (0,0))
+    Himage.paste(portrait, (15,170))
     epd.display_Fast(epd.getbuffer(Himage))
     #time.sleep(2)
 
