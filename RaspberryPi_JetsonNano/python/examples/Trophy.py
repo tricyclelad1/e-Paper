@@ -40,7 +40,7 @@ try:
 
     Himage.paste(background, (0,0))
     Himage.paste(portrait, (15,168))
-    Himage.paste(symbol, (577,211))
+    Himage.paste(symbol, (578,211))
 
     epd.display_Fast(epd.getbuffer(Himage))
     #time.sleep(2)
