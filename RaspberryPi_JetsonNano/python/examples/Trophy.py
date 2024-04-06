@@ -36,15 +36,19 @@ try:
     logging.info("Drawing on the Horizontal image...")
     Himage = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
 
-    #Loading each image element
-    background = Image.open(os.path.join(backgrounddir, 'backgroundwire.jpg'))
-    portrait = Image.open(os.path.join(portraitdir, 'arborec'))
-    symbol = Image.open(os.path.join(symboldir, 'arborec'))
+    #Load the winner and leverage that both portrait and symbol use the same filename 
+    Winner = "arborec"
+    WinnerImage = Winner + ".jpg" 
+    
+    #Load each image element
+    backgroundImage = Image.open(os.path.join(backgrounddir, 'backgroundwire.jpg'))
+    portraitImage = Image.open(os.path.join(portraitdir, WinnerImage))
+    symbolImage = Image.open(os.path.join(symboldir, WinnerImage))
 
     #Add each element to buffer
-    Himage.paste(background, (0,0))
-    Himage.paste(portrait, (15,168))
-    Himage.paste(symbol, (575,212))
+    Himage.paste(backgroundImage, (0,0))
+    Himage.paste(portraitImage, (15,168))
+    Himage.paste(symbolImage, (575,212))
 
     #Display Buffer to screen
     epd.display_Fast(epd.getbuffer(Himage))
