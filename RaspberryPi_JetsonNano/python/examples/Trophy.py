@@ -6,6 +6,7 @@ backgrounddir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__
 fontdir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'font')
 portraitdir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'portraits')
 symboldir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'symbols')
+libdir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'lib')
 
 if os.path.exists(libdir):
     sys.path.append(libdir)
