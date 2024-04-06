@@ -2,8 +2,11 @@
 # -*- coding:utf-8 -*-
 import sys
 import os
-picdir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'pic')
-libdir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'lib')
+backgrounddir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'background')
+fontdir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'font')
+portraitdir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'portraits')
+symboldir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'symbols')
+
 if os.path.exists(libdir):
     sys.path.append(libdir)
 
@@ -23,25 +26,26 @@ try:
     epd.init()
     epd.Clear()
 
-    font24 = ImageFont.truetype(os.path.join(picdir, 'TIFont.otf'), 24)
-    font18 = ImageFont.truetype(os.path.join(picdir, 'TIFont.otf'), 18)
-    font35 = ImageFont.truetype(os.path.join(picdir, 'TIFont.otf'), 35)
+    font24 = ImageFont.truetype(os.path.join(fontdir, 'TIFont.otf'), 24)
+    font18 = ImageFont.truetype(os.path.join(fontdir, 'TIFont.otf'), 18)
+    font35 = ImageFont.truetype(os.path.join(fontdir, 'TIFont.otf'), 35)
  
 
     #Drawing on the Horizontal Image
     logging.info("Drawing on the Horizontal image...")
     Himage = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
 
-    background = Image.open(os.path.join(picdir, 'Background wireframe.jpg'))
-    portrait = Image.open(os.path.join(picdir, 'Axis 225 x 300.jpg'))
-    #symbol = Image.open(os.path.join(picdir, 'Axis Symbol 212 x 212.jpg'))
-    symbol = Image.open(os.path.join(picdir, 'Bent gb.jpg'))
+    #Loading each image element
+    background = Image.open(os.path.join(backgrounddir, 'backgroundwire.jpg'))
+    portrait = Image.open(os.path.join(portraitdir, 'arborec.jpg'))
+    symbol = Image.open(os.path.join(symboldir, 'arborec.png'))
 
-
+    #Add each element to buffer
     Himage.paste(background, (0,0))
     Himage.paste(portrait, (15,168))
     Himage.paste(symbol, (577,211))
 
+    #Display Buffer to screen
     epd.display_Fast(epd.getbuffer(Himage))
     #time.sleep(2)
 
