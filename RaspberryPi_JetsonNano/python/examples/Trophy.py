@@ -44,7 +44,7 @@ try:
     #Add each element to buffer
     Himage.paste(background, (0,0))
     Himage.paste(portrait, (15,168))
-    Himage.paste(symbol, (575,210))
+    Himage.paste(symbol, (575,212))
 
     #Display Buffer to screen
     epd.display_Fast(epd.getbuffer(Himage))
