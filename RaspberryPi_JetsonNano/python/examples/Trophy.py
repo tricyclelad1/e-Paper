@@ -38,8 +38,8 @@ try:
 
     #Loading each image element
     background = Image.open(os.path.join(backgrounddir, 'backgroundwire.jpg'))
-    portrait = Image.open(os.path.join(portraitdir, 'free systems.jpg'))
-    symbol = Image.open(os.path.join(symboldir, 'free systems.gif'))
+    portrait = Image.open(os.path.join(portraitdir, 'arborec.jpg'))
+    symbol = Image.open(os.path.join(symboldir, 'arborec.gif'))
 
     #Add each element to buffer
     Himage.paste(background, (0,0))
