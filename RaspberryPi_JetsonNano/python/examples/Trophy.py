@@ -48,7 +48,7 @@ try:
     epd.init()
     epd.Clear()
 
-    runnerUpFont = ImageFont.truetype(os.path.join(libdir, 'TIFont.otf'), 27)
+    runnerUpFont = ImageFont.truetype(os.path.join(libdir, 'TIFont.otf'), 26)
     winnerFont = ImageFont.truetype(os.path.join(libdir, 'TIFont.otf'), 40)
  
 
