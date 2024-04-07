@@ -1,7 +1,6 @@
 {
     "winner": {
-      "name": "1234567890",
-      "name": "Jennifera",
+      "name": "Camron",
       "title": "Celdauri Trade Confederation",
       "faction": "Celdauri"
     },
@@ -11,27 +10,27 @@
     }, 
     "player3": {
       "name": "Ryker",
-      "faction": "Hacan"
+      "faction": "Mentak"
     }, 
     "player4": {
       "name": "Amelia",
-      "faction": "Hacan"
+      "faction": "Nomad"
     }, 
     "player5": {
       "name": "Tyler",
-      "faction": "Hacan"
+      "faction": "Bentor"
     }, 
     "player6": {
       "name": "Lydia",
-      "faction": "Hacan"
+      "faction": "Sardakk N'orr"
     }, 
     "player7": {
       "name": "Jack",
-      "faction": "Hacan"
+      "faction": "L'tokk Khrask"
     }, 
     "player8": {
       "name": "Valen",
-      "faction": "Hacan"
+      "faction": "Nekro Virus"
     },
     "title": [
       "The Arborec",

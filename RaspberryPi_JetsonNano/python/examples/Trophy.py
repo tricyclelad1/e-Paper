@@ -63,9 +63,26 @@ try:
     winnerTitle = winner['title']
     winnerFaction = winner['faction']
     winnerImage = winnerFaction + ".jpg" 
+
+    player2Name = player2['name']
+    player3Name = player3['name']
+    player4Name = player4['name']
+    player5Name = player5['name']
+    player6Name = player6['name']
+    player7Name = player7['name']
+    player8Name = player8['name']
+
+    player2Faction = player2['faction']
+    player3Faction = player3['faction']
+    player4Faction = player4['faction']
+    player5Faction = player5['faction']
+    player6Faction = player6['faction']
+    player7Faction = player7['faction']
+    player8Faction = player8['faction']
     
+
     #Load each image element
-    backgroundImage = Image.open(os.path.join(libdir, 'backgroundwire.jpg'))
+    backgroundImage = Image.open(os.path.join(libdir, 'background.jpg'))
     portraitImage = Image.open(os.path.join(portraitdir, winnerImage))
     symbolImage = Image.open(os.path.join(symboldir, winnerImage))
 
@@ -80,13 +97,13 @@ try:
 
     draw = ImageDraw.Draw(Himage)
     draw.text((400, 112), winnerName + " - " + winnerTitle, font = winnerFont, fill = 0, anchor="mm") #400x195 is center of winner box
-    draw.text((254, 188), "2 Player - Faction Name", font = runnerUpFont, fill = 0, anchor="lm") #400x195 is center of winner box
-    draw.text((254, 231), "3 Player - Faction Name", font = runnerUpFont, fill = 0, anchor="lm") #400x195 is center of winner box
-    draw.text((254, 275), "4 Player - Faction Name", font = runnerUpFont, fill = 0, anchor="lm") #400x195 is center of winner box
-    draw.text((254, 318), "5 Player - Faction Name", font = runnerUpFont, fill = 0, anchor="lm") #400x195 is center of winner box
-    draw.text((254, 361), "6 Player - Faction Namea", font = runnerUpFont, fill = 0, anchor="lm") #400x195 is center of winner box
-    draw.text((254, 404), "7 Player - Faction Name", font = runnerUpFont, fill = 0, anchor="lm") #400x195 is center of winner box
-    draw.text((254, 447), "8 Player - Faction Name", font = runnerUpFont, fill = 0, anchor="lm") #400x195 is center of winner box
+    draw.text((254, 188), player2Name + " - " + player2Faction, font = runnerUpFont, fill = 0, anchor="lm") #400x195 is center of winner box
+    draw.text((254, 231), player3Name + " - " + player3Faction, font = runnerUpFont, fill = 0, anchor="lm") #400x195 is center of winner box
+    draw.text((254, 275), player4Name + " - " + player4Faction, font = runnerUpFont, fill = 0, anchor="lm") #400x195 is center of winner box
+    draw.text((254, 318), player5Name + " - " + player5Faction, font = runnerUpFont, fill = 0, anchor="lm") #400x195 is center of winner box
+    draw.text((254, 361), player6Name + " - " + player6Faction, font = runnerUpFont, fill = 0, anchor="lm") #400x195 is center of winner box
+    draw.text((254, 404), player7Name + " - " + player7Faction, font = runnerUpFont, fill = 0, anchor="lm") #400x195 is center of winner box
+    draw.text((254, 447), player8Name + " - " + player8Faction, font = runnerUpFont, fill = 0, anchor="lm") #400x195 is center of winner box
 
     epd.display(epd.getbuffer(Himage))
     time.sleep(2)
