@@ -49,6 +49,7 @@ try:
     epd.Clear()
 
     font18 = ImageFont.truetype(os.path.join(libdir, 'TIFont.otf'), 18)
+    font30 = ImageFont.truetype(os.path.join(libdir, 'TIFont.otf'), 30)
     font40 = ImageFont.truetype(os.path.join(libdir, 'TIFont.otf'), 40)
     font44 = ImageFont.truetype(os.path.join(libdir, 'TIFont.otf'), 44)
  
@@ -81,13 +82,13 @@ try:
 
     draw = ImageDraw.Draw(Himage)
     draw.text((400, 112), winnerName + " - " + winnerTitle, font = font40, fill = 0, anchor="mm") #400x195 is center of winner box
-    draw.text((400, 189), "2 Player - Faction Name", font = font18, fill = 0, anchor="mm") #400x195 is center of winner box
-    draw.text((400, 211), "3 Player - Faction Name", font = font18, fill = 0, anchor="mm") #400x195 is center of winner box
-    draw.text((400, 233), "4 Player - Faction Name", font = font18, fill = 0, anchor="mm") #400x195 is center of winner box
-    draw.text((400, 255), "5 Player - Faction Name", font = font18, fill = 0, anchor="mm") #400x195 is center of winner box
-    draw.text((400, 277), "6 Player - Faction Name", font = font18, fill = 0, anchor="mm") #400x195 is center of winner box
-    draw.text((400, 299), "7 Player - Faction Name", font = font18, fill = 0, anchor="mm") #400x195 is center of winner box
-    draw.text((400, 321), "8 Player - Faction Name", font = font18, fill = 0, anchor="mm") #400x195 is center of winner box
+    draw.text((400, 232), "2 Player - Faction Name", font = font30, fill = 0, anchor="mm") #400x195 is center of winner box
+    draw.text((400, 275), "3 Player - Faction Name", font = font30, fill = 0, anchor="mm") #400x195 is center of winner box
+    draw.text((400, 318), "4 Player - Faction Name", font = font30, fill = 0, anchor="mm") #400x195 is center of winner box
+    draw.text((400, 361), "5 Player - Faction Name", font = font30, fill = 0, anchor="mm") #400x195 is center of winner box
+    draw.text((400, 404), "6 Player - Faction Name", font = font30, fill = 0, anchor="mm") #400x195 is center of winner box
+    draw.text((400, 447), "7 Player - Faction Name", font = font30, fill = 0, anchor="mm") #400x195 is center of winner box
+    draw.text((400, 490), "8 Player - Faction Name", font = font30, fill = 0, anchor="mm") #400x195 is center of winner box
 
     epd.display(epd.getbuffer(Himage))
     time.sleep(2)
