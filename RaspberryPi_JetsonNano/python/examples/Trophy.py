@@ -94,7 +94,7 @@ try:
     Himage.paste(symbolImage, (575,212))
 
     #Display Buffer to screen
-    epd.display_Fast(epd.getbuffer(Himage))
+    #epd.display_Fast(epd.getbuffer(Himage))
     #time.sleep(2)
 
     #Draw player text
