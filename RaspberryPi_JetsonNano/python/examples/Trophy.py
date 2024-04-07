@@ -38,10 +38,6 @@ try:
     player7 = data['player7']
     player8 = data['player8']
 
-    print(f"{winner['name']}")
-    print(f"{winner['title']}")
-    print(f"{winner['faction']}")
- 
     logging.info("Trophy")
     epd = epd4in26.EPD() 
 
@@ -56,6 +52,10 @@ try:
 
     #Drawing on the Horizontal Image
     logging.info("Drawing on the Horizontal image...")
+    logging.info(f"{winner['name']}")
+    logging.info(f"{winner['title']}")
+    logging.info(f"{winner['faction']}")
+
     Himage = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
 
     #Load the winner and leverage that both portrait and symbol use the same filename 
