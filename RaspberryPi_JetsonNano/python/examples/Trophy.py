@@ -82,7 +82,7 @@ try:
     
 
     #Load each image element
-    backgroundImage = Image.open(os.path.join(libdir, 'backgroundwire.jpg'))
+    backgroundImage = Image.open(os.path.join(libdir, 'background.jpg'))
     portraitImage = Image.open(os.path.join(portraitdir, winnerImage))
     symbolImage = Image.open(os.path.join(symboldir, winnerImage))
 
