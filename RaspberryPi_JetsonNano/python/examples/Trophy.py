@@ -43,6 +43,7 @@ try:
     player6 = data['player6']
     player7 = data['player7']
     player8 = data['player8']
+    gameDate = data['gameDate']
 
     logging.info("init and Clear")
     epd.init()
@@ -50,6 +51,7 @@ try:
 
     runnerUpFont = ImageFont.truetype(os.path.join(libdir, 'TIFont.otf'), 26)
     winnerFont = ImageFont.truetype(os.path.join(libdir, 'TIFont.otf'), 40)
+    dateFont= ImageFont.truetype(os.path.join(libdir, 'TIFont.otf'), 18)
  
 
     #Drawing on the Horizontal Image
@@ -79,7 +81,7 @@ try:
     player6Faction = player6['faction']
     player7Faction = player7['faction']
     player8Faction = player8['faction']
-    
+
 
     #Load each image element
     backgroundImage = Image.open(os.path.join(libdir, 'background.jpg'))
@@ -95,9 +97,9 @@ try:
     epd.display_Fast(epd.getbuffer(Himage))
     #time.sleep(2)
 
+    #Draw player text
     draw = ImageDraw.Draw(Himage)
     draw.text((400, 112), winnerName + " - " + winnerTitle, font = winnerFont, fill = 0, anchor="mm") #400x195 is center of winner box
-
     draw.text((250, 188), player2Name + " - " + player2Faction, font = runnerUpFont, fill = 0, anchor="lm") #400x195 is center of winner box
     draw.text((250, 231), player3Name + " - " + player3Faction, font = runnerUpFont, fill = 0, anchor="lm") #400x195 is center of winner box
     draw.text((250, 275), player4Name + " - " + player4Faction, font = runnerUpFont, fill = 0, anchor="lm") #400x195 is center of winner box
@@ -105,6 +107,11 @@ try:
     draw.text((250, 361), player6Name + " - " + player6Faction, font = runnerUpFont, fill = 0, anchor="lm") #400x195 is center of winner box
     draw.text((250, 404), player7Name + " - " + player7Faction, font = runnerUpFont, fill = 0, anchor="lm") #400x195 is center of winner box
     draw.text((250, 447), player8Name + " - " + player8Faction, font = runnerUpFont, fill = 0, anchor="lm") #400x195 is center of winner box
+
+    #Draw date of game
+    
+    draw.text((788, 447), gameDate, font = dateFont, fill = 0, anchor="rm") #400x195 is center of winner box
+    draw = ImageDraw.Draw(Himage)
 
     epd.display(epd.getbuffer(Himage))
     #time.sleep(2)
