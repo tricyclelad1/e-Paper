@@ -24,6 +24,12 @@ logging.basicConfig(level=logging.DEBUG)
 
 try:
 
+   
+
+    logging.info("Trophy")
+    epd = epd4in26.EPD() 
+
+    logging.info("Read scoreboard file")
     #Open file and load the data
     with open(scoreboard, 'r') as file:
         data = json.load(file)
@@ -38,9 +44,6 @@ try:
     player7 = data['player7']
     player8 = data['player8']
 
-    logging.info("Trophy")
-    epd = epd4in26.EPD() 
-
     logging.info("init and Clear")
     epd.init()
     epd.Clear()
@@ -52,20 +55,20 @@ try:
 
     #Drawing on the Horizontal Image
     logging.info("Drawing on the Horizontal image...")
-    logging.info(f"{winner['name']}")
-    logging.info(f"{winner['title']}")
-    logging.info(f"{winner['faction']}")
+
 
     Himage = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
 
     #Load the winner and leverage that both portrait and symbol use the same filename 
-    Winner = "arborec"
-    WinnerImage = Winner + ".jpg" 
+    winnerName = winner['name']
+    winnerTitle = winner['title']
+    winnerFaction = winner['faction']
+    winnerImage = winnerFaction + ".jpg" 
     
     #Load each image element
-    backgroundImage = Image.open(os.path.join(libdir, 'backgroundwire.jpg'))
-    portraitImage = Image.open(os.path.join(portraitdir, WinnerImage))
-    symbolImage = Image.open(os.path.join(symboldir, WinnerImage))
+    backgroundImage = Image.open(os.path.join(libdir, 'background.jpg'))
+    portraitImage = Image.open(os.path.join(portraitdir, winnerImage))
+    symbolImage = Image.open(os.path.join(symboldir, winnerImage))
 
     #Add each element to buffer
     Himage.paste(backgroundImage, (0,0))
@@ -74,18 +77,13 @@ try:
 
     #Display Buffer to screen
     epd.display_Fast(epd.getbuffer(Himage))
-    #time.sleep(2)
+    time.sleep(2)
 
+    draw = ImageDraw.Draw(Himage)
+    draw.text((400, 195), winnerName + " - " + winnerTitle, font = font35, fill = 0, anchor="mm") #400x195 is center of winner box
 
-    #draw = ImageDraw.Draw(Himage)
-    #draw.rectangle((0,0,800,480), fill=0)
-    #draw.rectangle((100,0,400,35), fill=255)
-    #draw.rectangle((0,400,700,435), fill=255)
-    #draw.text((400, 195), 'Jennifer Lee Martinez' , font = font35, fill = 0, anchor="mm") #400x195 is center of winner box
-    #draw.text((0, 400), 'PAX MAGNIFICA BELLUM GLORIOSUM', font = font35, fill = 0)
-    #epd.display(epd.getbuffer(Himage))
-
-    #time.sleep(2)
+    epd.display(epd.getbuffer(Himage))
+    time.sleep(2)
     #logging.info("Clear...")
     #epd.init()
     #epd.Clear()
