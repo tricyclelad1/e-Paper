@@ -48,9 +48,9 @@ try:
     epd.init()
     epd.Clear()
 
-    font24 = ImageFont.truetype(os.path.join(libdir, 'TIFont.otf'), 24)
     font18 = ImageFont.truetype(os.path.join(libdir, 'TIFont.otf'), 18)
     font40 = ImageFont.truetype(os.path.join(libdir, 'TIFont.otf'), 40)
+    font44 = ImageFont.truetype(os.path.join(libdir, 'TIFont.otf'), 44)
  
 
     #Drawing on the Horizontal Image
@@ -80,7 +80,7 @@ try:
     time.sleep(2)
 
     draw = ImageDraw.Draw(Himage)
-    draw.text((400, 112), winnerName + " - " + winnerTitle, font = font40, fill = 0, anchor="mm") #400x195 is center of winner box
+    draw.text((400, 112), winnerName + " - " + winnerTitle, font = font44, fill = 0, anchor="mm") #400x195 is center of winner box
 
     epd.display(epd.getbuffer(Himage))
     time.sleep(2)
