@@ -2,14 +2,17 @@
 # -*- coding:utf-8 -*-
 import sys
 import os
-backgrounddir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'background')
-fontdir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'font')
-portraitdir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'portraits')
-symboldir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'symbols')
+import json
+
 libdir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'lib')
 
 if os.path.exists(libdir):
     sys.path.append(libdir)
+
+scoreboard = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'scoreboard.json')
+portraitdir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'portraits')
+symboldir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'symbols')
+
 
 import logging
 from waveshare_epd import epd4in26
@@ -20,6 +23,25 @@ import traceback
 logging.basicConfig(level=logging.DEBUG)
 
 try:
+
+    #Open file and load the data
+    with open(scoreboard, 'r') as file:
+        data = json.load(file)
+
+    #Access Scoreboard
+    winner = data['winner']
+    player2 = data['player2']
+    player3 = data['player3']
+    player4 = data['player4']
+    player5 = data['player5']
+    player6 = data['player6']
+    player7 = data['player7']
+    player8 = data['player8']
+
+    print(f"{winner['name']}")
+    print(f"{winner['title']}")
+    print(f"{winner['faction']}")
+ 
     logging.info("Trophy")
     epd = epd4in26.EPD() 
 
@@ -27,9 +49,9 @@ try:
     epd.init()
     epd.Clear()
 
-    font24 = ImageFont.truetype(os.path.join(fontdir, 'TIFont.otf'), 24)
-    font18 = ImageFont.truetype(os.path.join(fontdir, 'TIFont.otf'), 18)
-    font35 = ImageFont.truetype(os.path.join(fontdir, 'TIFont.otf'), 35)
+    font24 = ImageFont.truetype(os.path.join(libdir, 'TIFont.otf'), 24)
+    font18 = ImageFont.truetype(os.path.join(libdir, 'TIFont.otf'), 18)
+    font35 = ImageFont.truetype(os.path.join(libdir, 'TIFont.otf'), 35)
  
 
     #Drawing on the Horizontal Image
@@ -41,7 +63,7 @@ try:
     WinnerImage = Winner + ".jpg" 
     
     #Load each image element
-    backgroundImage = Image.open(os.path.join(backgrounddir, 'backgroundwire.jpg'))
+    backgroundImage = Image.open(os.path.join(libdir, 'backgroundwire.jpg'))
     portraitImage = Image.open(os.path.join(portraitdir, WinnerImage))
     symbolImage = Image.open(os.path.join(symboldir, WinnerImage))
 
