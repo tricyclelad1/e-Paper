@@ -97,6 +97,7 @@ try:
 
     draw = ImageDraw.Draw(Himage)
     draw.text((400, 112), winnerName + " - " + winnerTitle, font = winnerFont, fill = 0, anchor="mm") #400x195 is center of winner box
+
     draw.text((254, 188), player2Name + " - " + player2Faction, font = runnerUpFont, fill = 0, anchor="lm") #400x195 is center of winner box
     draw.text((254, 231), player3Name + " - " + player3Faction, font = runnerUpFont, fill = 0, anchor="lm") #400x195 is center of winner box
     draw.text((254, 275), player4Name + " - " + player4Faction, font = runnerUpFont, fill = 0, anchor="lm") #400x195 is center of winner box
