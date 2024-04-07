@@ -110,7 +110,7 @@ try:
 
     #Draw date of game
     
-    draw.text((780, 455), gameDate, font = dateFont, fill = 0, anchor="rs") #400x195 is center of winner box
+    draw.text((780, 456), gameDate, font = dateFont, fill = 0, anchor="rs") #400x195 is center of winner box
     draw = ImageDraw.Draw(Himage)
 
     epd.display(epd.getbuffer(Himage))
