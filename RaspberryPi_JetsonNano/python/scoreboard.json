@@ -6,32 +6,32 @@
       "faction": "Jol-Nar"
     },
     "player2": {
-      "name": "2 Jenny",
+      "name": "Jenny",
       "faction": "Hacan"
     }, 
     "player3": {
-      "name": "3 Ryker",
+      "name": "Ryker",
       "faction": "Mentak"
     }, 
     "player4": {
-      "name": "4 Amelia",
+      "name": "Amelia",
       "faction": "Nomad"
     }, 
     "player5": {
-      "name": "5 Tyler",
+      "name": "Tyler",
       "faction": "Bentor"
     }, 
     "player6": {
-      "name": "6 Jennifer",
+      "name": "Jennifer",
       "faction": "Sardakk N'orr"
     }, 
     "player7": {
-      "name": "7 Jack",
+      "name": "Jack",
       "faction": "L'tokk Khrask"
     }, 
     "player8": {
-      "name": "",
-      "faction": ""
+      "name": "Brian",
+      "faction": "The Winnu"
     },
     "title": [
       "The Arborec",
