@@ -93,7 +93,7 @@ try:
 
     #Display Buffer to screen
     epd.display_Fast(epd.getbuffer(Himage))
-    time.sleep(2)
+    #time.sleep(2)
 
     draw = ImageDraw.Draw(Himage)
     draw.text((400, 112), winnerName + " - " + winnerTitle, font = winnerFont, fill = 0, anchor="mm") #400x195 is center of winner box
@@ -107,7 +107,7 @@ try:
     draw.text((250, 447), player8Name + " - " + player8Faction, font = runnerUpFont, fill = 0, anchor="lm") #400x195 is center of winner box
 
     epd.display(epd.getbuffer(Himage))
-    time.sleep(2)
+    #time.sleep(2)
     #logging.info("Clear...")
     #epd.init()
     #epd.Clear()
