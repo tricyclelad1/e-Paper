@@ -1,37 +1,37 @@
 {
     "gameDate": "04/06/2024",
     "winner": {
-      "name": "Jennifer",
-      "title": "The Zelian Purifier",
-      "faction": "Zelian"
+      "name": "Player 1",
+      "title": "The Emirates of Hacan",
+      "faction": "Hacan"
     },
     "player2": {
-      "name": "Jenny",
-      "faction": "Hacan"
+      "name": "Player",
+      "faction": "Arborec"
     }, 
     "player3": {
-      "name": "Ryker",
-      "faction": "Mentak"
+      "name": "Player",
+      "faction": "Sol"
     }, 
     "player4": {
-      "name": "Amelia",
-      "faction": "Nomad"
+      "name": "Player",
+      "faction": "Muaat"
     }, 
     "player5": {
-      "name": "Tyler",
-      "faction": "Bentor"
+      "name": "Player",
+      "faction": "Naalu"
     }, 
     "player6": {
-      "name": "Jennifer",
-      "faction": "Sardakk N'orr"
+      "name": "Player",
+      "faction": "Nekro Virus"
     }, 
     "player7": {
-      "name": "Jack",
-      "faction": "L'tokk Khrask"
+      "name": "Player",
+      "faction": "The Winnu"
     }, 
     "player8": {
-      "name": "Brian",
-      "faction": "The Winnu"
+      "name": "Player",
+      "faction": "Jol-Nar"
     },
     "title": [
       "The Arborec",
