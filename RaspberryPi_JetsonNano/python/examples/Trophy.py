@@ -81,6 +81,13 @@ try:
 
     draw = ImageDraw.Draw(Himage)
     draw.text((400, 112), winnerName + " - " + winnerTitle, font = font40, fill = 0, anchor="mm") #400x195 is center of winner box
+    draw.text((400, 189), "2 Player - Faction Name", font = font18, fill = 0, anchor="mm") #400x195 is center of winner box
+    draw.text((400, 211), "3 Player - Faction Name", font = font18, fill = 0, anchor="mm") #400x195 is center of winner box
+    draw.text((400, 233), "4 Player - Faction Name", font = font18, fill = 0, anchor="mm") #400x195 is center of winner box
+    draw.text((400, 255), "5 Player - Faction Name", font = font18, fill = 0, anchor="mm") #400x195 is center of winner box
+    draw.text((400, 277), "6 Player - Faction Name", font = font18, fill = 0, anchor="mm") #400x195 is center of winner box
+    draw.text((400, 299), "7 Player - Faction Name", font = font18, fill = 0, anchor="mm") #400x195 is center of winner box
+    draw.text((400, 321), "8 Player - Faction Name", font = font18, fill = 0, anchor="mm") #400x195 is center of winner box
 
     epd.display(epd.getbuffer(Himage))
     time.sleep(2)
